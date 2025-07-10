@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      # Mounts the current directory to the app directory in the container
+      # for live-reloading during development.
+      - .:/app
+    environment:
+      # Ensures that logs are displayed in the terminal in real-time.
+      - PYTHONUNBUFFERED=1
